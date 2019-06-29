@@ -15,9 +15,13 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-mongoose.connect('mongodb://localhost:27017/yelpcamp_v12'
-// , { useNewUrlParser: true }
-);
+mongoose.connect('mongodb+srv://devlovess:devlovesswalapass@cluster0-zd6xq.mongodb.net/test?retryWrites=true&w=majority'
+, { 
+    useNewUrlParser: true,
+    useCreateIndex: true
+}).then(() => {
+    console.log("Conected");
+});
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
